@@ -1,0 +1,40 @@
+from datetime import datetime
+
+def get_strategy(days):
+    
+    if days >= 30:
+        return "Must complete 1 chapter daily and make short notes."
+    elif 7 <= days < 30:
+        return "Solve previous year papers or your future is gonna be very dark!"
+    elif 1 <= days < 7:
+        return "If you still have not studied, your future is really Dark!!"
+    elif days == 0:
+        return "If you have studied, just relax. If not, get ready to be beaten!"
+    else:
+        return "The exam has already passed dumbo!! Move forward for beating :( or getting rewards :) ."
+
+print("LET'S START STUDYING...")
+
+while True:
+    date_input = input("\nEnter your exam date (YYYY-MM-DD): ")
+
+    try:
+        exam_date = datetime.strptime(date_input, "%Y-%m-%d").date()
+        today = datetime.now().date()
+        
+        days_left = (exam_date - today).days
+
+        
+        if days_left >= 0:
+            print(f"\nGet Ready for fighting: {days_left} days remaining.")
+            print(get_strategy(days_left))
+            print("\nGood luck!")
+            break  
+        
+        
+        else:
+            print("\nTime is over mate. Get Ready to be  kicked out :( or for rewards :)")
+
+    except ValueError:
+        print("\nError: Invalid format! Use YYYY-MM-DD (Example: 2026-05-15).")
+        
