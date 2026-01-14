@@ -1,4 +1,4 @@
-Student Programming Portfolio
+ Portfolio
 Summary:
 This repository contains a collection of projects I built to apply my classroom learning to real-world scenarios. My focus was on writing clean code that handles user input correctly and solves everyday problems.
 
